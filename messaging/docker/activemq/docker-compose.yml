@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  activemq:
+    image: rmohr/activemq:${ACTIVEMQ_IMAGE_VERSION}
+    ports:
+      - "61616:61616" # Broker PORT
+      - "8161:8161"   # ActiveMQ UI
+    volumes:
+      - mq-data:/opt/activemq/data
+      - mq-conf:/opt/activemq/conf
+
+volumes:
+  mq-data:
+  mq-conf:
